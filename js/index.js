@@ -27,18 +27,42 @@ let clipboard = document.querySelectorAll('p');
 clipboard.forEach(element => {
     element.addEventListener('copy', () => {
         window.alert('Did you just copy something from my page?');
-        
     })
 })
 
-//Keydown
+//resize
+const body = document.querySelector('body');
+window.addEventListener('resize', () => {
+    body.style.backgroundColor = 'red';
+})
+
+//Keypress
+body.addEventListener('keypress', () => {
+    body.style.backgroundColor = 'purple';
+})
+
+//Keyup
+body.addEventListener('keyup', () => {
+    body.style.backgroundColor = 'white';
+})
 
 //wheel
-
-//drag/drop
-
-//resize
-
-//scroll
+const imgContent = document.querySelectorAll('.img-content');
+imgContent.forEach((element) => {
+    element.addEventListener('wheel', () => {
+        element.style.transform = 'scale(1.2)';
+        element.style.transition = 'transform 1.5s';
+    })
+})
 
 //select
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(element => {
+    element.addEventListener('mouseleave', () => {
+        window.alert("I see that you've considered a link.")
+        event.preventDefault();
+    })
+})
+
+//drag/drop
